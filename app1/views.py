@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 posts=[{'Author':'Advait Shukla',
         'Title':'Blog Post 1',
         'Content':'First post content',
@@ -15,4 +14,4 @@ def home(request):
     }
     return render(request,r'app1\home.html',context)
 def about(request):
-    return render(request,r'app1\about.html')
+    return render(request,r'app1\about.html',{'title':'About'})
