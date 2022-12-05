@@ -1,16 +1,9 @@
 from django.shortcuts import render
-posts=[{'Author':'Advait Shukla',
-        'Title':'Blog Post 1',
-        'Content':'First post content',
-        'date_posted':'January 01,2022'},
-       {'Author':'Advait Shukla',
-        'Title':'Blog Post 2',
-        'Content':'Second post content',
-        'date_posted':'January 10,2022'}]
+from .models import Post
 # Create your views here.
 def home(request):
     context={
-        'posts':posts
+        'posts':Post.objects.all()
     }
     return render(request,r'app1\home.html',context)
 def about(request):
