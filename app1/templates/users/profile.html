@@ -1,5 +1,11 @@
 {%extends "app1/base.html"%}
 {%load crispy_forms_tags%}
 {%block content%}
-<h1>{{user.username}}</h1>
+    <div class="media">
+        <img src="{{user.profile.image.url}}" class="rounded-circle account-img">
+        <div class="media-body">
+            <h2 class="account-heading">{{user.username}}</h2>
+            <p class="text-secondary">{{user.email}}</p>
+        </div>
+    </div>
 {%endblock content%}
